@@ -17,6 +17,24 @@
     <script>
         var gameInstance = UnityLoader.instantiate("gameContainer", "slope.json", { onProgress: UnityProgress, Module: { onRuntimeInitialized: function() { UnityProgress(gameInstance, "complete") } } });
     </script>
+    <script>
+        document.addEventListener('keydown', function(e) {
+            switch(e.key.toLowerCase()) {
+                case 's':
+                    gameInstance.SendMessage('Player', 'SuperSpeed');
+                    break;
+                case 'g':
+                    gameInstance.SendMessage('Player', 'GodMode');
+                    break;
+                case 'r':
+                    gameInstance.SendMessage('Player', 'ResetPosition');
+                    break;
+                case 'i':
+                    gameInstance.SendMessage('Player', 'InfiniteJump');
+                    break;
+            }
+        });
+    </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2541434264715219"
      crossorigin="anonymous"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2541434264715219"
